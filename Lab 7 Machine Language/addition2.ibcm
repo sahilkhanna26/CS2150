@@ -1,0 +1,8 @@
+C00A 000	jmp 	start 	skip around the variables
+0000 001 n 	dw 	0 	int n
+0000 002 n1	dw 	0 	int n1
+0000 003 n2	dw 	0 	int n2
+0000 004 zero 	dw 	0
+0001 005 one 	dw 	1
+0000 006 s      0   int s 
+0000 007			leave space for changes

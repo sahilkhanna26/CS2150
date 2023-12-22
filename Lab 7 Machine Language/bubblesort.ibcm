@@ -1,0 +1,100 @@
+C00D 000	jmp 	start 	skip around the variables
+0000 001 i 	dw 	0 	int i
+0070 002 a 	dw 	0 	int a[]
+000A 003 n 	dw 	0
+0009 004 t  dw  0
+0000 005 zero 	dw 	0
+0001 006 one 	dw 	1
+3000 007 loadit 	dw 	
+4000 008 storeit  
+0008 009 k dw 0
+0000 00A n1
+0000 00B n2
+0000 00C temp 
+3003 00D LOOP load n if(i>=n)
+6001 00E sub i 
+E01B 00F jmpl exit
+D01B 010 jmpe exit
+3008 011 load storeit
+5002 012 add a 
+5001 013 add i 
+4016 014 store doit plant instruction in the program 
+1000 015 readH read element
+0000 016 doit dw 0
+3001 017 load i i+=1 
+5006 018 add one 
+4001 019 store i 
+C00D 01A jmp loop
+3005 01B load zero
+4001 01C store i = 0 
+3003 01D LOOP load n if(i>=n)
+6001 01E sub i
+E053 01F jmpe exit
+D053 020 jmpl exit 
+3004 021 LOOP load t 
+6001 022 sub i 
+E049 023 jmpe exit 
+D049 024 jmpl exit
+3007 025 load loadit
+5002 026 add a 
+5004 027 add t 
+4029 028 load doit plant instruction in the program 
+0000 029 load element
+400A 02A store n1
+3007 02B load loadit
+5002 02C add a 
+5009 02D add k
+402F 02E load doit plant instruction in the program 
+0000 02F load element
+400B 030 store n2
+300B 031 LOOP if (n1>n2)load n2 
+600A 032 sub n2-n1
+E041 033 jmpl exit
+D041 034 jmpe exit    
+3008 035 load storeit 
+5002 036 add a
+5004 037 add t
+403A 038 store doit plant instruction in the program
+300B 039 load n2 
+0000 03A doit dw 0
+3008 03B load storeit 
+5002 03C add a
+5009 03D add k
+4040 03E store doit plant instruction in the program
+300A 03F load n1 
+0000 040 doit dw 0
+3004 041 load t
+6006 042 sub 1
+4004 043 store t
+3009 044 load k
+D048 045 jmpe 
+6006 046 sub1 
+4009 047 store k 
+C021 048 jump to nested 
+3001 049 load i 
+5006 04A add 1
+4001 04B store i 
+3003 04C load n
+6006 04D sub 1
+4004 04E store in t
+3004 04F load t 
+6006 050 sub 1
+4009 051 store k 
+C01D 052 jmp to first loop
+3005 053 load zero
+4001 054 i=0
+3003 055 load n LOOP START
+6001 056 sub i 
+E063 057 jmpl xit 
+D063 058 jmpe xit 
+3007 059 load loadit 
+5002 05A add a 
+5001 05B add i 
+405D 05C load doit plant instruction in the program
+0000 05D load element 
+1800 05E printH
+3001 05F load i 
+5006 060 add 1 
+4001 061 store i
+C055 062 jmp loop
+0000 063 halt 

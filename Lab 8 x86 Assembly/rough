@@ -1,0 +1,24 @@
+int result = 0
+
+power{
+	result = result*power(x,y)
+
+	
+
+}
+
+
+
+_power:
+
+	xor rax, rax ;zeroing 
+	xor r10, r10 ; zeroing r10 
+	add rax, rdi; rax = first number
+
+multplier:
+	cmp rsi,0 ; does power == 0 
+	je done1 
+	dec rsi ; subtract 1 from the power
+	call _product ;perform the product 
+
+

@@ -1,0 +1,43 @@
+ // insert a value into the tree
+    TreeNode* n = new TreeNode(val);
+
+    
+
+
+    if (val == "+" || val == "-"|| val == "/" || val == "*" ){
+        TreeNode* t1 = expressionStack.top();
+        n->left = t1;
+        expressionStack.pop();
+
+        TreeNode* t2 = expressionStack.top();
+        n->right = t2;
+
+        expressionStack.pop();
+
+        
+        expressionStack.push(n);
+    }
+
+
+
+    else{
+          expressionStack.push(n);
+    }
+
+
+
+
+
+    if(tree ->left == NULL){
+        cleanTree(tree->left);
+         delete tree;
+
+     }
+
+     if(tree->right == NULL){
+        cleanTree(tree->right);
+        delete tree;
+     }
+
+     delete tree
+}

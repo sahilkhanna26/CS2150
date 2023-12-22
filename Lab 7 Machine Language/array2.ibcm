@@ -1,0 +1,26 @@
+CC00A 000	jmp 	start 	skip around the variables
+0000 001 i 	dw 	0 	int i
+0000 002 a 	dw 	0 	int a[]
+0000 003 n 	dw 	0
+0000 004 t  dw  0  temp variable
+0000 005 zero 	dw 	0
+0001 006 one 	dw 	1
+3000 007 loadit 	dw 	5000
+4000 008 storeit  
+0000 009
+
+
+
+3001 02F loop load i if (i<=0)
+E03b 030 jmpe exit
+3007 031 load loadit
+5002 032 add a 
+5001 033 add i 
+4035 034 store doit plant instruction in the program 
+0000 035 load element
+1800 036 printH
+3001 037 load i i-=1
+6006 038 subtract one 
+4001 039 store i 
+C029 03A jmp loop 
+0000 03B halt

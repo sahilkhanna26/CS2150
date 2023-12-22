@@ -1,0 +1,24 @@
+#include <iostream>
+#ifndef bankAccount
+#define bankAccount
+
+using namespace std;
+
+
+class bankAccount{
+public:
+	bankAccount(); 
+	bankAccount(double amount);
+	~bankAccount();
+	double withdraw(double amount);
+	double deposit(double amount);
+	double getBalance() const;
+
+
+private:
+	static double balance;
+
+
+}
+
+#endif

@@ -1,0 +1,20 @@
+#Sahil Khanna; Tuesday 12:30PM
+
+CXX=clang++ $(CXXFLAGS)
+CXXFLAGS=-Wall # Enable all warnings
+DEBUG=-g
+
+a.out: hashTable.o wordPuzzle.o timer.o
+	$(CXX) $(DEBUG) hashTable.o wordPuzzle.o timer.o
+	@echo "CS2150 is a lotta work bro" 
+
+hashTable.o: hashTable.cpp hashTable.h
+
+wordPuzzle.o: wordPuzzle.cpp hashTable.h
+
+timer.o: timer.cpp timer.h
+
+
+.PHONY: clean
+clean:
+	-rm -f *.o a.out

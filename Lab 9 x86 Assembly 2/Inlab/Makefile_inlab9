@@ -1,0 +1,16 @@
+#Sahil Khanna; Tuesday 12:30PM
+
+CXX=clang++ $(CXXFLAGS)
+CXXFLAGS=-Wall # Enable all warnings
+DEBUG=-g
+
+a.out: linkedlist.o
+	$(CXX) $(DEBUG) linkedlist.o
+	@echo "CS2150 is a lotta work bro" 
+
+linkedlist.o: linkedlist.c
+
+
+.PHONY: clean
+clean:
+	-rm -f *.o a.out

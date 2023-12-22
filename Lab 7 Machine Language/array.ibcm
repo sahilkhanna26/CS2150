@@ -1,0 +1,63 @@
+C00A 000	jmp 	start 	skip around the variables
+0000 001 i 	dw 	0 	int i
+0050 002 a 	dw 	0 	int a[]
+0000 003 n 	dw 	0
+0000 004 t  dw  0  
+0000 005 zero 	dw 	0
+0001 006 one 	dw 	1
+3000 007 loadit 	dw 	
+4000 008 storeit  
+0000 009
+1000 00A start readH 	read array size
+4003 00B store  n
+3005 00C load   zero 
+4001 00D store i=0
+3003 00E loop load n if (i>= n) 
+6001 00F sub i 
+E01D 010 jmpl exit
+D01D 011 jmpe exit
+3008 012 load storeit
+5002 013 add a 
+5001 014 add i 
+4017 015 store doit plant instruction in the program 
+1000 016 readH read element
+0000 017 doit dw 0
+3001 018 load i i+=1 
+5006 019 add one 
+4001 01A store i 
+C00E 01B jmp loop
+3001 01C load i END OF LOOP
+6006 01D i=i-1
+4001 01E store i 
+3005 01F load zero
+4004 020 store t = 0
+3003 021 loop load n if(t>=n)
+6004 022 sub t 
+E02F 023 jmpe exit
+D02F 024 jmpl exit
+3007 025 load loadit
+5002 026 add a 
+5004 027 add t
+4029 028 store doit plant instruction in the program 
+0000 029 load element 
+1800 02A printH
+3004 02B load t t+=1
+5006 02C add one 
+4004 02D store t 
+C021 02E jmp loop  LOOP END
+3004 02F load t
+6006 030 sub 1 
+4004 031 store
+3004 032 loop load i if (i<=0)
+E03E 033 jmpe exit
+3007 034 load loadit
+5002 035 add a 
+5004 036 add i 
+4038 037 store doit plant instruction in the program 
+0000 038 load element
+1800 039 printH
+3004 03A load i i-=1
+6006 03B subtract one 
+4004 03C store i 
+C032 03D jmp loop 
+0000 03E halt

@@ -1,0 +1,20 @@
+#Sahil Khanna; Tuesday 12:30PM
+
+CXX=clang++ $(CXXFLAGS)
+CXXFLAGS=-Wall -std=c++11# Enable all warnings
+DEBUG=-g
+
+a.out: middleearth.o topological.o
+	$(CXX) $(DEBUG) middleearth.o topological.o
+	@echo "CS2150 is a lotta work bro" 
+	@doxygen
+
+
+middleearth.o: middleearth.cpp middleearth.h
+
+topological.o: topological.cpp
+
+
+.PHONY: clean
+clean:
+	-rm -f *.o a.out

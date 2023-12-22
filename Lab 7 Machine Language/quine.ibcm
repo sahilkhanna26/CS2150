@@ -1,0 +1,23 @@
+C007 000	jmp 	start 	skip around the variables
+0000 001 i 	dw 	0 	int i
+0017 002 n  dw  0   size 
+0001 003 one dw 1 
+0000 004 zero dw 0
+3000 005 loadit dw 
+0000 006 
+3004 007 start 	load zero 
+4001 008 store i=0
+3002 009 loop load n if (i>=n)
+6001 00A sub i
+E017 00B jmpl exit 
+D017 00C jmpe exit
+3005 00D load loadit
+5001 00E add i
+4010 00F load doit plant instruction in the program 
+0000 010 doit dw 0
+1800 012 printH
+3001 013 load i i +=1
+5003 014 add one 
+4001 015 store i
+C009 016 jmp loop
+0000 017 Halts
